@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+    body {
+        background-color: #ffffff;
+        margin: 0;
+        padding: 0;
+    }       
+    #font {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+        color: #df3d96;
+    }   
+    .login-container {
+        background-color: #ffffff;
+        width: 300px;
+        margin: 100px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-style:oblique;
+    }
+    .login-container input {
+        width: 90%;
+        padding: 8px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .login-container button {
+        background-color: #547cd0;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .login-container button:hover {
+        background-color: #001d5c;
+    }
+</style>
+
+
+
+<script>
+    function loginUser(){
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+
+        // Simple validation (In real applications, validate against a database)
+        if(username === "Hardik" && password === "hardik12"){
+            //store logged in user in localStorage
+            localStorage.setItem("logingUser", username);
+            alert("Login successful!");
+            window.location.href = "index.html"; // Redirect to home page after login
+        } else {
+            alert("Invalid credentials. Please try again.");
+        }
+    }
+</script>
+<body>
+    
+    <div class="login-container">  
+        <h2 id="font">Login to 🛍MYShop</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter username" />
+        <br /><br />
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter password" />
+        <br /><br />
+        <button onclick="loginUser()">Login</button> 
+        
+    </div>
+
+    
+</body>
+</html>

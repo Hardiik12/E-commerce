@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div id="user-display"></div>
+            <h1>🛍MYShop</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="cart.html">Cart</a>
+            <a href="login.html">Login</a>
+        </nav>  
+    </header>
+
+    <section class="main">
+        <h2>Welcome to MYShop!</h2>
+        <p>Your one-stop shop for all your needs.</p>
+        <a href="product_list.html" class="btn">Shop Now</a>
+    </section>
+    <section class="highlights">
+        <h2>
+            Why Shop With Us?
+        </h2>
+        <ul>
+            <li>✔High Quality Products</li>
+            <li>✔Wide Variety of Choices</li>
+            <li>✔Secure Payment Options</li>
+            <li>✔Fast and Reliable Shipping</li>
+            <li>✔Excellent Customer Service</li>
+            <li>✔Easy Returns and Refunds</li>
+        </ul>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2024 E-commerce Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let user = localStorage.getItem("logingUser");
+
+        if(user){
+            document.getElementById("user-display").innerText = `Logged in as: ${user}`;
+        } else {
+            document.getElementById("user-display").innerText = `Not logged in`;
+        }
+    </script>
+
+    
+
+    <script>
+        let inactivityTimeout;
+        const INACTIVITY_TIME = 3000; // 300 seconds in milliseconds
+
+        if(user){
+            document.getElementById("user-display").innerText = `Logged in as: ${user}`;
+        } else {
+            document.getElementById("user-display").innerText = `Not logged in`;
+        }
+
+        // Function to reset inactivity timer
+        function resetInactivityTimer() {
+            clearTimeout(inactivityTimeout);
+            
+            inactivityTimeout = setTimeout(() => {
+                // Auto logout
+                localStorage.removeItem("logingUser");
+                document.getElementById("user-display").innerText = "Not logged in";
+                alert("You have been logged out due to inactivity.");
+            }, INACTIVITY_TIME);
+        }
+
+        // Track mouse movement
+        document.addEventListener("mousemove", resetInactivityTimer);
+        
+        // Track keyboard activity
+        document.addEventListener("keydown", resetInactivityTimer);
+
+        // Start timer on page load if user is logged in
+        if(user){
+            resetInactivityTimer();
+        }
+    </script>
+
+    
+
+<script src="script.js"></script>
+
+    
+</body>
+</html>
