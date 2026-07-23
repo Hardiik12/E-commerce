@@ -3,146 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="styles.css">
-        <style>
-            .product-list {
-                padding: 20px;
-            }
-            .product-list .header {
-                text-align: center;
-                margin-bottom: 30px;
-            }
-            .product-list .products {
-                display: flex;
-                gap: 20px;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            .product-item {
-                border: 1px solid #ccc;
-                border-radius: 8px;
-                padding: 15px;
-                text-align: center;
-                width: 200px;
-            }
-            .product-item img {
-                max-width: 100%;
-                height: auto;
-                border-radius: 8px;
-            }
-            .product-item h3 {
-                margin: 10px 0;
-            }
-            .product-item p {
-                font-size: 18px;
-                color: #333;
-            }
-            .product-item button {
-                background-color: #547cd0;
-                color: #fff;
-                border: none;
-                padding: 10px 15px;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-            .product-item button:hover {
-                background-color: #112a62;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1>🛍MYShop</h1>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="product.html">Products</a>
-                <a href="cart.html">Cart</a>
-            </nav>  
-        </header>
+    <title>Products - MYShop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🛍️ MYShop</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="product_list.html" class="active">Products</a>
+            <a href="cart.html">Cart</a>
+            <a href="login.html">Login</a>
+        </nav>  
+    </header>
 
-        <section class="product-list">
-            <div class="header">
-                <h2>Product List</h2>
+    <section class="product-list">
+        <div class="header">
+            <h2>Product List</h2>
+        </div>
+        <div class="products">
+
+            <div class="product-item">
+                <img src="img/product1.jpeg" alt="Product 1">
+                <h3>Air purifier ||</h3>
+                <p>$10.00</p>
+                <a href="cart.html" class="btn">Add to Cart</a>
             </div>
-            <div class="products">
 
-                <div class="product-item">
-                    <img src="img/product1.jpeg" alt="Product 1">
-                    <h3>Air purifire||</h3>
-                    <p>$10.00</p>
-                    <button onclick="addToCart('Product 1', 10)">Add to Cart</button>
-                </div>
-
-                <div class="product-item">
-                    <img src="img/product2.jpeg" alt="Product 2">
-                    <h3>Cousmetic</h3>
-                    <p>$15.00</p>
-                    <button onclick="addToCart('Product 2', 15)">Add to Cart</button>
-                </div>
-
-                <div class="product-item">
-                    <img src="img/product3.jpeg" alt="Product 3">
-                    <h3>Ordinary || pack of 4</h3>
-                    <p>$20.00</p>
-                    <button onclick="addToCart('Product 3', 20)">Add to Cart</button>
-                </div>
-
-                <div class="product-item">
-                    <img src="img/toys.jpeg" alt="toys">
-                    <h3>Soft toy || koala</h3>
-                    <p>$4.00</p> 
-                    <button onclick="addToCart('toys', 4)">Add to Cart</button>
-                </div>
-
-                <div class="product-item">
-                     <img src="" alt="">
-                     <h3> </h3>
-                     <p>$40.00</p> 
-                     <button onclick="addToCart('Product 3', 40)">Add to Cart</button>
-                </div>
-
-                <div class="product-item">
-                     <img src="" alt="">
-                     <h3> </h3>
-                     <p>&90.00</p>
-                     <button onclick="addToCart('Product 3', 90)">Add to Cart</button>
-                </div>
-
-                <div class="product-item">
-                     <img src="" alt="">
-                     <h3> </h3>
-                     <p>$50.00</p>
-                     <button onclick="addToCart('Product 3', 50)">Add to Cart</button>
-                </div>
-
-                <div class="product-item">
-                     <img src="" alt="">
-                     <h3> </h3>
-                     <p>$30.00</p>
-                     <button onclick="addToCart('Product 3', 30)">Add to Cart</button>
-                </div>
-
-                <div class="product-item">
-                     <img src="" alt="">
-                     <h3> </h3>
-                     <p>$40.00</p>
-                    <button onclick="addToCart('Product 3', 40)">Add to Cart</button>
-                </div>
-
+            <div class="product-item">
+                <img src="img/product2.jpeg" alt="Product 2">
+                <h3>Cosmetics</h3>
+                <p>$15.00</p>
+                <a href="cart.html" class="btn">Add to Cart</a>
             </div>
-        </section>
 
-        <script src="script.js"></script>
+            <div class="product-item">
+                <img src="img/product3.jpeg" alt="Product 3">
+                <h3>Ordinary || pack of 4</h3>
+                <p>$20.00</p>
+                <a href="cart.html" class="btn">Add to Cart</a>
+            </div>
 
-        <footer>
-            <p>&copy; 2024 E-commerce Store. All rights reserved.</p>
-        </footer>
-    
-    </body>
-    </html>
+            <div class="product-item">
+                <img src="img/toys.jpeg" alt="toys">
+                <h3>Soft toy || koala</h3>
+                <p>$4.00</p> 
+                <a href="cart.html" class="btn">Add to Cart</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 E-commerce Store. All rights reserved.</p>
+    </footer>
+</body>
+</html>

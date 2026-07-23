@@ -3,60 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Electronics - MYShop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .product-list {
-            padding: 20px;
-        }
-        .product-list .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .product-list .products {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-        .product-item {
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
-            width: 200px;
-        }
-        .product-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-        .product-item h3 {
-            margin: 10px 0;
-        }
-        .product-item p {
-            font-size: 18px;
-            color: #333;
-        }
-        .product-item button {
-            background-color: #547cd0;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .product-item button:hover {
-            background-color: #112a62;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <h1>🛍MYShop</h1>
+        <h1>🛍️ MYShop</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="product.html">Products</a>
             <a href="cart.html">Cart</a>
+            <a href="login.html">Login</a>
         </nav>  
     </header>
     <section class="product-list">
@@ -68,28 +27,31 @@
                 <img src="img/laptops.webp" alt="Laptop">
                 <h3>Laptop</h3>
                 <p>High performance laptop for all your computing needs.</p>
-                <button>Explore</button>
+                <a href="product_list.html" class="btn">Explore</a>
             </div>
             <div class="product-item">
                 <img src="img/smartphone.webp" alt="Smartphone">
                 <h3>Smartphone</h3>
                 <p>Latest model smartphone with cutting-edge features.</p>
-                <button>Explore</button>
+                <a href="product_list.html" class="btn">Explore</a>
             </div>
             <div class="product-item">
                 <img src="img/headphones.webp" alt="Headphones">
                 <h3>Headphones</h3>
                 <p>Noise-cancelling headphones for immersive sound experience.</p>
-                <button>Explore</button>
+                <a href="product_list.html" class="btn">Explore</a>
             </div>
             <div class="product-item">
                 <img src="img/watch.jpeg" alt="Smartwatch">
                 <h3>Smartwatch</h3>
                 <p>Stay connected and track your fitness with this smartwatch.</p>
-                <button>Explore</button>
+                <a href="product_list.html" class="btn">Explore</a>
             </div>
         </div>
     </section>
 
+    <footer>
+        <p>&copy; 2024 E-commerce Store. All rights reserved.</p>
+    </footer>
 </body>
 </html>
