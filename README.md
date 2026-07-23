@@ -20,23 +20,22 @@ A lightweight, responsive, and interactive static E-Commerce application built u
 
 ## 📂 Project Structure
 
-The project code is located in the [E-commerce_project.html](file:///Users/hardik/Documents/Web%20project/E-commerce/E-commerce_project.html) directory:
+The project files are organized in the root directory:
 
 ```
 E-commerce/
-├── E-commerce_project.html/
-│   ├── index.html            # Home page containing the welcome banner & inactivity timeout script
-│   ├── product.html          # Categories listing page (Books, Electronics, Fashion, Shoes, etc.)
-│   ├── product_list.html     # Detailed list of products with "Add to Cart" functionality
-│   ├── electronics.html      # Category-specific products listing (Laptops, Smartphones, etc.)
-│   ├── cart.html             # Cart details, checkout, and clear actions
-│   ├── login.html            # User login screen with simple validation
-│   ├── login1.html           # Simplified / alternative login layout
-│   ├── script.js             # Shared JavaScript code containing cart logic
-│   ├── styles.css            # Base stylesheet containing common layout, nav, button & header styles
-│   └── cart.css              # Custom layout rules specifically for the shopping cart page
-│   └── img/                  # Folder containing product images and category covers
-└── README.md                 # Project documentation (this file)
+├── index.html            # Home page containing the welcome banner & inactivity timeout script
+├── product.html          # Categories listing page (Books, Electronics, Fashion, Shoes, etc.)
+├── product_list.html     # Detailed list of products with "Add to Cart" functionality
+├── electronics.html      # Category-specific products listing (Laptops, Smartphones, etc.)
+├── cart.html             # Cart details, checkout, and clear actions
+├── login.html            # User login screen with simple validation
+├── login1.html           # Simplified / alternative login layout
+├── script.js             # Shared JavaScript code containing cart logic
+├── styles.css            # Base stylesheet containing common layout, nav, button & header styles
+├── cart.css              # Custom layout rules specifically for the shopping cart page
+├── img/                  # Folder containing product images and category covers
+└── README.md             # Project documentation (this file)
 ```
 
 ---
@@ -58,15 +57,13 @@ Since the application consists entirely of static assets, it runs directly in th
 
 ### Option 1: Direct File Access
 1. Clone or download the repository.
-2. Open [index.html](file:///Users/hardik/Documents/Web%20project/E-commerce/E-commerce_project.html/index.html) directly in any modern web browser (Chrome, Firefox, Safari, Edge).
+2. Open [index.html](file:///Users/hardik/Documents/Web%20project/E-commerce/index.html) directly in any modern web browser (Chrome, Firefox, Safari, Edge).
 
 ### Option 2: Local Development Server
 To avoid potential browser security policies (CORS) regarding local files, run a simple local web server:
 
 **Using Python:**
 ```bash
-# Navigate to the E-commerce_project.html directory
-cd "E-commerce_project.html"
 # Start a simple HTTP server on port 8000
 python3 -m http.server 8000
 ```
@@ -82,16 +79,16 @@ Install the **Live Server** extension, open the directory, and click **"Go Live"
 Upon analyzing the codebase, here are some key observations and recommendations for improvement:
 
 1.  **Duplicate Declarations in `script.js`**:
-    *   *Observation*: [script.js](file:///Users/hardik/Documents/Web%20project/E-commerce/E-commerce_project.html/script.js) contains duplicate definitions for variables/functions:
+    *   *Observation*: [script.js](file:///Users/hardik/Documents/Web%20project/E-commerce/script.js) contains duplicate definitions for variables/functions:
         *   `cart` (lines 1 & 46)
         *   `addToCart()` (lines 3 & 49)
         *   `showCart()` (lines 21 & 56)
     *   *Recommendation*: Clean up the script file to avoid redundant function overrides.
 2.  **Duplicate Element IDs**:
-    *   *Observation*: In [cart.html](file:///Users/hardik/Documents/Web%20project/E-commerce/E-commerce_project.html/cart.html), both the "Proceed to Checkout" and "Clear Cart" buttons use `id="checkout-btn"`.
+    *   *Observation*: In [cart.html](file:///Users/hardik/Documents/Web%20project/E-commerce/cart.html), both the "Proceed to Checkout" and "Clear Cart" buttons use `id="checkout-btn"`.
     *   *Recommendation*: HTML IDs must be unique. Update the "Clear Cart" button to use `id="clear-cart-btn"`.
 3.  **Nested HTML Structure**:
-    *   *Observation*: In [product_list.html](file:///Users/hardik/Documents/Web%20project/E-commerce/E-commerce_project.html/product_list.html), there are nested `<!DOCTYPE html>` and `<html>` tags (lines 1 and 6).
+    *   *Observation*: In [product_list.html](file:///Users/hardik/Documents/Web%20project/E-commerce/product_list.html), there are nested `<!DOCTYPE html>` and `<html>` tags (lines 1 and 6).
     *   *Recommendation*: Consolidate the structure into a single, valid document layout.
 4.  **Inactivity Timeout Interval**:
     *   *Observation*: The inactivity timeout is set to `INACTIVITY_TIME = 3000` (which is 3 seconds). The comment mentions `300 seconds`.
